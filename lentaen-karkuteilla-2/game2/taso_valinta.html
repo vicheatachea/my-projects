@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Outfit:wght@200;300;400&display=swap"
+          rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            height: 100vh;
+        }
+
+        .continent-link {
+            text-decoration: none;
+            width: 50%;
+            height: 50vh;
+        }
+
+        .continent-box {
+            background: black;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .continent-text {
+            font-size: 2em;
+            color: #00FF41;
+            text-align: center;
+            font-family: Nova Square, Outfit, "Times New Roman", Serif, sans-serif;
+        }
+
+        .continent-link:hover .continent-text {
+            color: whitesmoke;
+            text-decoration: underline #00FF41;
+        }
+
+        #clock {
+            font-family: Outfit, "Times New Roman", Serif, sans-serif;
+            color: #00FF41;
+            font-size: 2em;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+    </style>
+    <title>Tason Valinta</title>
+</head>
+<body>
+<div id="clock"></div>
+
+<a href="#" class="continent-link">
+    <div class="continent-box asia">
+        <div class="continent-text">Aasia</div>
+    </div>
+</a>
+
+<a href="#" class="continent-link">
+    <div class="continent-box africa">
+        <div class="continent-text">Afrikka</div>
+    </div>
+</a>
+
+<a href="main.html" class="continent-link">
+    <div class="continent-box europe">
+        <div class="continent-text">Europpa</div>
+    </div>
+</a>
+
+<a href="#" class="continent-link">
+    <div class="continent-box americas">
+        <div class="continent-text">Etelä & Pohjois Amerikka</div>
+    </div>
+</a>
+<script>
+    function updateClock() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+</body>
+</html>

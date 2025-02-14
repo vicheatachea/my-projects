@@ -1,0 +1,51 @@
+.cards {
+    padding: 20px;
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 40px 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.cardList {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 25px;
+    cursor: pointer;
+    color: var(--contrast-primary-color);
+}
+
+.arrow:hover {
+    color: var(--contrast-secondary-color);
+    background: none;
+}
+
+.arrow:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.hiddenArrow {
+    color: var(--base-primary-color);
+    cursor: default;
+}
+
+.hiddenArrow:hover {
+    color: var(--base-primary-color);
+}

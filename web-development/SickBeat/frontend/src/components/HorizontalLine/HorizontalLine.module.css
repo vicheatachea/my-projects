@@ -1,0 +1,6 @@
+.horizontalLine {
+    background-color: var(--contrast-primary-color);
+    margin: 0 40px 0 40px;
+    height: 1px;
+    border-radius: 2px;
+}

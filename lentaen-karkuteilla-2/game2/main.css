@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Nova Square, Outfit sans-serif;
+    background-color: black;
+}
+
+#top-nav {
+    position: relative;
+    top: 0;
+    background-color: #000000;
+    height: 10vh;
+    font-family: Outfit, serif;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 6px;
+}
+
+#top-nav > ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#top-nav > ul > li {
+    font-family: Nova Square, Outfit, "Times New Roman", Serif, sans-serif;
+    font-size: 24px;
+    color: #008F11;
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#top-nav > ul > li > i {
+    font-size: 30px;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+}
+
+.image {
+    flex: 60; /* 65% of the available space */
+    overflow: hidden; /* Ensure the image doesn't overflow its container */
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.text {
+    background-color: #008F11;
+    flex: 40;
+    padding: 0 17px 17px 17px;
+    box-sizing: border-box;
+}
+
+.first_hint, .second_hint {
+    color: #008F11;
+    font-family: Nova Square, Outfit, "Times New Roman", Serif, sans-serif;
+    padding: 10px;
+    background-color: #000000;
+    border-radius: 10px;
+}
+
+.bottom-div {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20vh;
+    background-color: #000000;
+    padding: 20px;
+}
+
+input::placeholder {
+    color: #0D0208;
+    font-family: Outfit, sans-serif;
+    transition: background-color 0.3s, font-family 0.3s;
+}
+
+.bottom-div input {
+    margin: 5px;
+    padding: 20px;
+    background-color: #00FF41;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 15px;
+    float: left;
+}
+
+.button {
+    margin: 5px;
+    padding: 20px;
+    background-color: #00FF41;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: Square, sans-serif;
+    font-size: 15px;
+    float: left;
+}
+
+#tip {
+    float: right;
+}
+
+#guide {
+    float: right;
+}
+
+button:hover {
+    background-color: #00FF41;
+    color: white;
+}
+
+#query:hover {
+    background-color: darkred;
+}
+
+#query:focus {
+    background-color: darkred;
+}
+
+input:focus {
+    background-color: #00FF41;
+    color: #000000;
+    font-family: Nova Square, Outfit, sans-serif;
+    font-size: larger;
+}
+
+
+#query.error {
+    transition: background-color 0.8s ease-in-out;
+    background-color: red;
+}
+
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+#image-container {
+    text-align: center;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    padding-right: 450px;
+    padding-top: 157px;
+}
+
+#local_time {
+    display: flex;
+    color: #000000;
+    margin-top: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

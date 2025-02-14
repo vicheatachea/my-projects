@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../general-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreditsViewController">
+    <top>
+        <Region prefHeight="50.0" />
+    </top>
+    <bottom>
+        <Region prefHeight="50.0" prefWidth="612.0" />
+    </bottom>
+    <left>
+        <Region prefWidth="50.0" />
+    </left>
+    <right>
+        <Region prefWidth="50.0" />
+    </right>
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="40.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="Developed By:">
+                    <font>
+                        <Font name="Bell MT Bold" size="64.0" />
+                    </font>
+                </Label>
+            <Label text="Ricardo de Sousa">
+               <font>
+                  <Font name="Georgia" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="138.0" layoutY="149.0" text="Saku Heinonen">
+               <font>
+                  <Font name="Georgia" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="138.0" layoutY="307.0" text="Vicheata Chea">
+               <font>
+                  <Font name="Georgia" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="138.0" layoutY="385.0" text="Viswak Balakrishnan">
+               <font>
+                  <Font name="Georgia" size="32.0" />
+               </font>
+            </Label>
+                <Button mnemonicParsing="false" onAction="#handleGoBack" text="Go Back">
+                    <font>
+                        <Font name="Verdana" size="32.0" />
+                    </font></Button>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

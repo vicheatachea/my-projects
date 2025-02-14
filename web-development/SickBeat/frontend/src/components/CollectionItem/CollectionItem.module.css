@@ -1,0 +1,54 @@
+.item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 0 40px;
+    transition: background-color 0.3s ease;
+}
+
+.item:hover {
+    background-color: var(--base-secondary-color);
+    cursor: pointer;
+}
+
+.number {
+    width: 30px;
+    text-align: center;
+    font-size: 18px;
+    color: var(--contrast-primary-color);
+}
+
+.details {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name {
+    flex: 2;
+    font-size: 18px;
+    color: var(--contrast-primary-color);
+}
+
+.artist {
+    flex: 3;
+    font-size: 16px;
+    color: var(--contrast-primary-color);
+}
+
+.duration {
+    flex: 1;
+    text-align: right;
+    font-size: 16px;
+    color: var(--contrast-primary-color);
+}
+
+.artistLink {
+    color: var(--contrast-primary-color);
+    cursor: pointer;
+}
+
+.artistLink:hover {
+    text-decoration: underline;
+}

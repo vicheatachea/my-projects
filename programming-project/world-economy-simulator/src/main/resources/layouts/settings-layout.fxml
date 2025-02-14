@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../settings-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingsViewController">
+    <center>
+        <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="48.0" tabMinHeight="48.0" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Simulation">
+                    <content>
+                        <VBox fx:id="simulationSettingsVBox" prefHeight="218.0" prefWidth="600.0">
+                            <children>
+                        <HBox alignment="CENTER_LEFT">
+                           <children>
+                                      <Label maxWidth="500.0" prefHeight="17.0" prefWidth="600.0" text="General Configurations">
+                                          <font>
+                                              <Font name="Bell MT Bold" size="32.0" />
+                                          </font>
+                                      </Label>
+                              <Label layoutX="10.0" layoutY="10.0" maxWidth="500.0" prefHeight="17.0" prefWidth="600.0" text="You can hover over the question marks to see tooltips!">
+                                 <font>
+                                    <Font name="Georgia" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                                <HBox>
+                                    <children>
+                                        <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" styleClass="tooltipLabel" text="❓">
+                                            <font>
+                                                <Font name="Georgia" size="24.0" />
+                                            </font>
+                                            <tooltip>
+                                                <Tooltip text="How long the simulation will run in days. Must be an integer greater than 0." />
+                                            </tooltip>
+                                            <HBox.margin>
+                                                <Insets right="10.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="300.0" text="Simulation Time (days):">
+                                            <font>
+                                                <Font name="Georgia" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="simulationTimeField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                            <font>
+                                                <Font name="Verdana" size="17.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label fx:id="simulationTimeErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                            <font>
+                                                <Font name="Georgia Bold" size="16.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="30.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <HBox>
+                                    <children>
+                                        <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" styleClass="tooltipLabel" text="❓">
+                                            <font>
+                                                <Font name="Georgia" size="24.0" />
+                                            </font>
+                                            <tooltip>
+                                                <Tooltip text="The actual time between each day in milliseconds. Must be an integer greater than 0." />
+                                            </tooltip>
+                                            <HBox.margin>
+                                                <Insets right="10.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="300.0" text="Simulation Delay (ms):">
+                                            <font>
+                                                <Font name="Georgia" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="simulationDelayField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                            <font>
+                                                <Font name="Verdana" size="17.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label fx:id="simulationDelayErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                            <font>
+                                                <Font name="Georgia Bold" size="16.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="30.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <HBox>
+                                    <children>
+                                        <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" styleClass="tooltipLabel" text="❓">
+                                            <font>
+                                                <Font name="Georgia" size="24.0" />
+                                            </font>
+                                            <tooltip>
+                                                <Tooltip text="The maximum supply values that a country stores. High values might cause performance issues. Must be an integer greater than 1." />
+                                            </tooltip>
+                                            <HBox.margin>
+                                                <Insets right="10.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="300.0" text="Country Supply Sample:">
+                                            <font>
+                                                <Font name="Georgia" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="countrySupplySampleField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                            <font>
+                                                <Font name="Verdana" size="17.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label fx:id="countrySupplySampleErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                            <font>
+                                                <Font name="Georgia Bold" size="16.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="30.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <HBox layoutX="10.0" layoutY="70.0">
+                                    <children>
+                                        <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" styleClass="tooltipLabel" text="❓">
+                                            <font>
+                                                <Font name="Georgia" size="24.0" />
+                                            </font>
+                                            <tooltip>
+                                                <Tooltip text="The size of a segment of a country's population. Low values might cause performance issues. Must be an integer greater than 0." />
+                                            </tooltip>
+                                            <HBox.margin>
+                                                <Insets right="10.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="300.0" text="Population Segment Size:">
+                                            <font>
+                                                <Font name="Georgia" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="populationSegmentSizeField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                            <font>
+                                                <Font name="Verdana" size="17.0" />
+                                            </font>
+                                        </TextField>
+                                        <Label fx:id="populationSegmentSizeErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                            <font>
+                                                <Font name="Georgia Bold" size="16.0" />
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets left="30.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Resources">
+                    <content>
+                        <BorderPane prefHeight="267.0" prefWidth="600.0">
+                            <left>
+                                <ListView fx:id="resourceListView" maxHeight="1.7976931348623157E308" minHeight="100.0" onMouseClicked="#handleResourceSelection" prefWidth="250.0" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS">
+                                    <BorderPane.margin>
+                                        <Insets right="30.0" />
+                                    </BorderPane.margin>
+                                </ListView>
+                            </left>
+                            <top>
+                                <Label prefHeight="17.0" prefWidth="601.0" text="Resource Configurations" BorderPane.alignment="CENTER_LEFT">
+                                    <font>
+                                        <Font name="Bell MT Bold" size="32.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="30.0" />
+                                    </padding>
+                                </Label>
+                            </top>
+                            <padding>
+                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                            </padding>
+                            <center>
+                                <VBox fx:id="resourceSettingsVBox" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <Label fx:id="resourceItemsLabel" text="Insert Resource">
+                                            <font>
+                                                <Font name="Georgia" size="28.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </Label>
+                                        <HBox>
+                                            <children>
+                                                <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" text="•">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="200.0" text="Name:">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="resourceNameField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                                    <font>
+                                                        <Font name="Verdana" size="17.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label fx:id="resourceNameErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Georgia Bold" size="16.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox layoutX="10.0" layoutY="10.0">
+                                            <children>
+                                                <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" styleClass="tooltipLabel" text="❓">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" />
+                                                    </HBox.margin>
+                                                    <tooltip>
+                                                        <Tooltip text="The level of important of the resource, either for survival or development. Must be any number between 0 and 1." />
+                                                    </tooltip>
+                                                </Label>
+                                                <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="200.0" text="Priority:">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="resourcePriorityField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                                    <font>
+                                                        <Font name="Verdana" size="17.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label fx:id="resourcePriorityErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Georgia Bold" size="16.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox layoutX="10.0" layoutY="40.0">
+                                            <children>
+                                                <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" styleClass="tooltipLabel" text="❓">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" />
+                                                    </HBox.margin>
+                                                    <tooltip>
+                                                        <Tooltip text="The base amount of resources that resource nodes of this type can produce. Must be an integer greater than 0." />
+                                                    </tooltip>
+                                                </Label>
+                                                <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="200.0" text="Base Capacity:">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="resourceBaseCapacityField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                                    <font>
+                                                        <Font name="Verdana" size="17.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label fx:id="resourceBaseCapacityErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Georgia Bold" size="16.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox layoutX="10.0" layoutY="70.0">
+                                            <children>
+                                                <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" styleClass="tooltipLabel" text="❓">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" />
+                                                    </HBox.margin>
+                                                    <tooltip>
+                                                        <Tooltip text="The general production cost of this resource per unit. Must be a positive number." />
+                                                    </tooltip>
+                                                </Label>
+                                                <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="200.0" text="Production Cost:">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="resourceProductionCostField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                                    <font>
+                                                        <Font name="Verdana" size="17.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label fx:id="resourceProductionCostErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Georgia Bold" size="16.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox maxWidth="400.0" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Button minWidth="70.0" mnemonicParsing="false" onAction="#newResource" text="New">
+                                                    <font>
+                                                        <Font name="Bell MT Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                                <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                <Button fx:id="addResourceButton" layoutX="10.0" layoutY="10.0" minWidth="70.0" mnemonicParsing="false" onAction="#addResource" text="Add">
+                                                    <font>
+                                                        <Font name="Bell MT Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="saveResourceButton" layoutX="50.0" layoutY="10.0" minWidth="70.0" mnemonicParsing="false" onAction="#saveResource" text="Save">
+                                                    <font>
+                                                        <Font name="Bell MT Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                                <Region fx:id="resourceOptionalRegion" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                <Button fx:id="deleteResourceButton" layoutX="88.0" layoutY="10.0" minWidth="90.0" mnemonicParsing="false" onAction="#deleteResource" text="Delete">
+                                                    <font>
+                                                        <Font name="Bell MT Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </center>
+                        </BorderPane>
+                    </content>
+                </Tab>
+                <Tab text="Countries">
+                    <content>
+                        <BorderPane prefHeight="267.0" prefWidth="600.0">
+                            <left>
+                                <ListView fx:id="countryListView" maxHeight="1.7976931348623157E308" minHeight="100.0" onMouseClicked="#handleCountrySelection" prefWidth="250.0" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS">
+                                    <BorderPane.margin>
+                                        <Insets right="30.0" />
+                                    </BorderPane.margin>
+                                </ListView>
+                            </left>
+                            <top>
+                                <Label prefHeight="17.0" prefWidth="601.0" text="Country Configurations" BorderPane.alignment="CENTER_LEFT">
+                                    <font>
+                                        <Font name="Bell MT Bold" size="32.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="30.0" />
+                                    </padding>
+                                </Label>
+                            </top>
+                            <padding>
+                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                            </padding>
+                            <center>
+                                <VBox fx:id="countrySettingsVBox" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <Label fx:id="countryItemsLabel" text="Insert Country">
+                                            <font>
+                                                <Font name="Georgia" size="28.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </Label>
+                                        <HBox>
+                                            <children>
+                                                <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" text="•">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="220.0" text="Name:">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="countryNameField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                                    <font>
+                                                        <Font name="Verdana" size="17.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label fx:id="countryNameErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Georgia Bold" size="16.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox>
+                                            <children>
+                                                <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" text="•">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="220.0" text="Initial Money:">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="countryInitialMoneyField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                                    <font>
+                                                        <Font name="Verdana" size="17.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label fx:id="countryInitialMoneyErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Georgia Bold" size="16.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox>
+                                            <children>
+                                                <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" text="•">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets right="10.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="220.0" text="Initial Population:">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="countryInitialPopulationField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                                    <font>
+                                                        <Font name="Verdana" size="17.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label fx:id="countryInitialPopulationErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Georgia Bold" size="16.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox maxWidth="420.0" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Button minWidth="70.0" mnemonicParsing="false" onAction="#newCountry" text="New">
+                                                    <font>
+                                                        <Font name="Bell MT Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                                <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                <Button fx:id="addCountryButton" layoutX="10.0" layoutY="10.0" minWidth="70.0" mnemonicParsing="false" onAction="#addCountry" text="Add">
+                                                    <font>
+                                                        <Font name="Bell MT Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="saveCountryButton" layoutX="50.0" layoutY="10.0" minWidth="70.0" mnemonicParsing="false" onAction="#saveCountry" text="Save">
+                                                    <font>
+                                                        <Font name="Bell MT Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                                <Region fx:id="countryOptionalRegion" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                <Button fx:id="deleteCountryButton" layoutX="88.0" layoutY="10.0" minWidth="90.0" mnemonicParsing="false" onAction="#deleteCountry" text="Delete">
+                                                    <font>
+                                                        <Font name="Bell MT Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </center>
+                        </BorderPane>
+                    </content>
+                </Tab>
+                <Tab text="Resource Nodes">
+                    <content>
+                        <BorderPane prefHeight="267.0" prefWidth="600.0">
+                            <left>
+                                <ListView fx:id="resourceNodeListView" maxHeight="1.7976931348623157E308" minHeight="100.0" onMouseClicked="#handleResourceNodeSelection" prefWidth="250.0" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS">
+                                    <BorderPane.margin>
+                                        <Insets right="30.0" />
+                                    </BorderPane.margin>
+                                </ListView>
+                            </left>
+                            <top>
+                                <Label prefHeight="17.0" prefWidth="601.0" text="Resource Node Configurations" BorderPane.alignment="CENTER_LEFT">
+                                    <font>
+                                        <Font name="Bell MT Bold" size="32.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="30.0" />
+                                    </padding>
+                                </Label>
+                            </top>
+                            <padding>
+                                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                            </padding>
+                            <center>
+                                <VBox fx:id="resourceNodeSettingsVBox" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <Label fx:id="resourceNodeItemsLabel" text="Insert Resource Node">
+                                            <font>
+                                                <Font name="Georgia" size="28.0" />
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                        </Label>
+                                        <HBox>
+                                            <children>
+                                    <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" text="•">
+                                       <font>
+                                          <Font name="Georgia" size="24.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                                <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="200.0" text="Country:">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <ComboBox fx:id="countryComboBox" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin></ComboBox>
+                                    <Label fx:id="resourceNodeCountryErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED">
+                                       <font>
+                                          <Font name="Georgia Bold" size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox>
+                                            <children>
+                                    <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" text="•">
+                                       <font>
+                                          <Font name="Georgia" size="24.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                                <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="200.0" text="Resource:">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <ComboBox fx:id="resourceComboBox" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0" />
+                                    <Label fx:id="resourceNodeResourceErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED">
+                                       <font>
+                                          <Font name="Georgia Bold" size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox>
+                                            <children>
+                                    <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" styleClass="tooltipLabel" text="❓">
+                                       <font>
+                                          <Font name="Georgia" size="24.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="Each tier will increase the base capacity of the resource node by 10%. Must be a positive integer." />
+                                       </tooltip>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                                <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="200.0" text="Tier:">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="resourceNodeTierField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                                    <font>
+                                                        <Font name="Verdana" size="17.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label fx:id="resourceNodeTierErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Georgia Bold" size="16.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox>
+                                            <children>
+                                    <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" styleClass="tooltipLabel" text="❓">
+                                       <font>
+                                          <Font name="Georgia" size="24.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="The base amount of resources that this resource node can produce. Must be an integer greater than 0." />
+                                       </tooltip>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                                <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="200.0" text="Base Capacity:">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="resourceNodeBaseCapacityField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                                    <font>
+                                                        <Font name="Verdana" size="17.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label fx:id="resourceNodeBaseCapacityErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Georgia Bold" size="16.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox>
+                                            <children>
+                                    <Label alignment="CENTER" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" styleClass="tooltipLabel" text="❓">
+                                       <font>
+                                          <Font name="Georgia" size="24.0" />
+                                       </font>
+                                       <tooltip>
+                                          <Tooltip text="The production cost of this resource node per unit. Must be a positive number." />
+                                       </tooltip>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                                <Label maxHeight="30.0" maxWidth="300.0" minHeight="30.0" minWidth="200.0" text="Production Cost:">
+                                                    <font>
+                                                        <Font name="Georgia" size="24.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="resourceNodeProductionCostField" maxHeight="32.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefWidth="150.0">
+                                                    <font>
+                                                        <Font name="Verdana" size="17.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label fx:id="resourceNodeProductionCostErrorLabel" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="30.0" minWidth="600.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                                    <font>
+                                                        <Font name="Georgia Bold" size="16.0" />
+                                                    </font>
+                                                    <HBox.margin>
+                                                        <Insets left="30.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                        <HBox maxWidth="400.0" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Button minWidth="70.0" mnemonicParsing="false" onAction="#newResourceNode" text="New">
+                                                    <font>
+                                                        <Font name="Bell MT Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                                <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                <Button fx:id="addResourceNodeButton" layoutX="10.0" layoutY="10.0" minWidth="70.0" mnemonicParsing="false" onAction="#addResourceNode" text="Add">
+                                                    <font>
+                                                        <Font name="Bell MT Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                                <Button fx:id="saveResourceNodeButton" layoutX="50.0" layoutY="10.0" minWidth="70.0" mnemonicParsing="false" onAction="#saveResourceNode" text="Save">
+                                                    <font>
+                                                        <Font name="Bell MT Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                                <Region fx:id="resourceNodeOptionalRegion" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                <Button fx:id="deleteResourceNodeButton" layoutX="88.0" layoutY="10.0" minWidth="90.0" mnemonicParsing="false" onAction="#deleteResourceNode" text="Delete">
+                                                    <font>
+                                                        <Font name="Bell MT Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </center>
+                        </BorderPane>
+                    </content>
+                </Tab>
+            <Tab text="Confirm">
+               <content>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="601.0" text="Confirm Your Settings">
+                           <font>
+                              <Font name="Bell MT Bold" size="32.0" />
+                           </font>
+                           <padding>
+                              <Insets top="30.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Your Simulation Has:">
+                           <font>
+                              <Font name="Georgia" size="28.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin></Label>
+                        <Label fx:id="confirmResourcesLabel" layoutX="10.0" layoutY="10.0" text="Resources">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin></Label>
+                        <Label fx:id="confirmCountriesLabel" layoutX="10.0" layoutY="27.0" text="Countries">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin></Label>
+                        <Label fx:id="confirmResourceNodesLabel" layoutX="259.0" layoutY="140.0" text="Resource Nodes">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#handleStartSimulation" text="Start Simulation">
+                           <font>
+                              <Font name="Bell MT Bold" size="20.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin></Button>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+    <top>
+        <Label text="World Economy Simulator Settings" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Bell MT Bold" size="48.0" />
+            </font>
+            <padding>
+                <Insets bottom="10.0" top="10.0" />
+            </padding>
+        </Label>
+    </top>
+</BorderPane>

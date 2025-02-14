@@ -1,0 +1,226 @@
+/* Root Variables for Light and Dark Mode (Slightly Modified) */
+:root {
+    /* Light Mode */
+    --base-primary-color: #f5f5f5; /* Light gray background for light mode */
+    --base-secondary-color: #cccccc;
+    --contrast-primary-color: #222222;
+    --contrast-secondary-color: #5a5a5a;
+
+    /* Border and Shadow colors */
+    --light-border-color: #6f6e6e; /* Light border for light mode */
+    --light-mode-shadow: rgba(0, 0, 0, 0.2); /* Darker shadow for light mode for more visibility */
+
+    /* Other custom properties */
+    --spacing-padding: 40px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Mode */
+        --base-primary-color: #2a2a2a; /* Dark gray background for dark mode */
+        --base-secondary-color: #454545;
+        --contrast-primary-color: #f0f0f0;
+        --contrast-secondary-color: #9a9a9a;
+
+        /* Border and Shadow colors */
+        --dark-border-color: #3f3f3f; /* Darker border for dark mode */
+        --dark-mode-shadow: rgba(255, 255, 255, 0.15); /* Lighter shadow for dark mode */
+    }
+}
+
+/* Music Player Styles */
+.musicPlayer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--base-primary-color); /* Background color adjusts based on light/dark mode */
+    color: var(--contrast-primary-color);
+    height: auto;
+    padding: var(--spacing-padding);
+    padding-top: 20px; /* Decrease space from the top */
+    padding-bottom: 60px; /* Increase space at the bottom */
+    border-radius: 20px;
+    border: 2px solid var(--contrast-secondary-color); /* Change border color to --contrast-secondary-color */
+    box-shadow: 0 20px 30px var(--light-mode-shadow), 0 10px 10px rgba(0, 0, 0, 0.1); /* Stronger, more layered shadow for light mode */
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+    .musicPlayer {
+        border: 2px solid var(--contrast-secondary-color); /* Change border color to --contrast-secondary-color */
+        box-shadow: 0 15px 30px var(--dark-mode-shadow); /* Lighter shadow in dark mode */
+    }
+}
+
+.nowPlaying {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-bottom: 30px; /* Increase space below the text */
+    color: var(--contrast-primary-color); /* Change text color to --contrast-primary-color */
+    text-transform: uppercase;
+}
+
+.imageContainer {
+    width: 340px;
+    height: 340px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 3px solid var(--contrast-secondary-color); /* Change border color to --contrast-secondary-color */
+    box-shadow: 0 15px 25px var(--light-mode-shadow), 0 8px 8px rgba(0, 0, 0, 0.05); /* More visible shadow for the image in light mode */
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+    .imageContainer {
+        border: 2px solid var(--contrast-secondary-color); /* Change border color to --contrast-secondary-color */
+        box-shadow: 0 10px 20px var(--dark-mode-shadow); /* Lighter shadow for dark mode */
+    }
+}
+
+.artistImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.songTitle {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px; /* Decrease space below the song title */
+    color: var(--contrast-primary-color);
+}
+
+.progressBarContainer {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.progressBar {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 8px;
+    background-color: var(--base-secondary-color);
+    border-radius: 10px;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.progressBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--contrast-secondary-color);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.progressBar::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.progressBar::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--contrast-secondary-color);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.volumeControl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.volumeControl label {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: var(--contrast-primary-color);
+}
+
+.volumeControl input[type="range"] {
+    width: 120px;
+    -webkit-appearance: none;
+    background-color: var(--base-secondary-color);
+    height: 6px;
+    outline: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.volumeControl input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--contrast-secondary-color);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.volumeControl input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+.controlButton {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--contrast-primary-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.controlButton:hover {
+    color: var(--contrast-primary-color);
+    transform: scale(1.2);
+}
+
+.controlButton:active {
+    transform: scale(1);
+}
+
+.timeInfo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #8a8484;
+    margin-top: 5px;
+}
+
+.fullDuration {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #8a8484;
+    margin-bottom: 20px;
+}
+
+.artistLink {
+    color: var(--contrast-primary-color);
+    cursor: pointer;
+}
+
+.artistLink:hover {
+    text-decoration: underline;
+}

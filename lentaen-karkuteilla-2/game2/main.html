@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lentäen Karkuteillä</title>
+    <link rel="stylesheet" href="main.css">
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Outfit:wght@200;300;400&display=swap"
+          rel="stylesheet">
+    <link href="https://www.fontspace.com/digital-display-font-f31011">
+</head>
+<body>
+<nav id="top-nav">
+    <ul>
+        <li id="top-nav1"><i class="fas fa-coins"></i>&nbsp;<span id="coins"></span></li>
+        <li id="top-nav2"><i class="fas fa-crosshairs">&nbsp;</i><span id="crimes_stopped"></span></li>
+        <li id="top-nav3"><i class="fas fa-road">&nbsp;</i><span id="distance"></span></li>
+        <li id="top-nav4"><i class="fas fa-gamepad">&nbsp;</i><span id="round_number"></span></li>
+        <li><i class="fas fa-plane-arrival"></i>&nbsp;<span id="current_country"></span></li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="image">
+        <img alt="A map pof the globe." src="https://wallpapercave.com/dwp2x/wp10959805.jpg">
+        <!--        <video width="100%" height="100%" controls loop>-->
+        <!--            <source src="https://static.videezy.com/system/resources/previews/000/037/577/original/Comp_7.mp4"-->
+        <!--                    type="video/webm">-->
+        <!--            Your browser does not support the video tag.-->
+        <!--        </video>-->
+    </div>
+    <div class="text">
+        <h1 id="local_time">Local time:&nbsp;<span id="time_here">00:00</span></h1>
+    </div>
+</div>
+<div class="bottom-div">
+    <form id="enter-country">
+        <label for="query"></label><input type="text" id="query" placeholder="Syötä valtion nimi..." required
+                                          autocomplete="off" spellcheck="false">
+        <button id="fly" class="button" form="enter-country">
+            MATKUSTA
+        </button>
+    </form>
+    <button id="guide" class="button">
+        PELIN OHJEET
+    </button>
+    <button id="tip" class="button">
+        ANNA 2. VIHJE
+    </button>
+    <div id="overlay">
+    <div id="image-container">
+        <span id="close-btn" onclick="closeImage()">&times;</span>
+        <img id="miau" src="https://i.pinimg.com/originals/de/52/1d/de521d066f19f143eda7a95c42bb385e.png" alt="Displayed Image">
+    </div>
+    </div>
+</div>
+</body>
+</html>

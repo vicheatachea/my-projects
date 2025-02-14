@@ -1,0 +1,98 @@
+.container {
+    margin: 50px 40px 70px 40px;
+    background-color: var(--base-primary-color);
+    color: var(--contrast-primary-color);
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 50px 40px 50px;
+    gap: 20px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.button {
+    background-color: var(--contrast-primary-color);
+    color: var(--base-primary-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--contrast-secondary-color);
+}
+
+.imageWrapper {
+    margin-right: 40px;
+}
+
+.playlistImage {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.headerText {
+    max-width: 500px;
+}
+
+.smallText {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: var(--contrast-primary-color);
+}
+
+.title {
+    font-size: 48px;
+    margin: 0;
+    color: var(--contrast-primary-color);
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.playButton {
+    background-color: #686a6a;
+    color: var(--base-primary-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.items {
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.iconSpacing {
+    margin-right: 4px;
+}

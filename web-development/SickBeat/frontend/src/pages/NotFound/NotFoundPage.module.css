@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    text-align: center;
+}
+
+.icon {
+    font-size: 5rem;
+    color: rgb(255, 26, 26);
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.message {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.backButton {
+    text-decoration: none;
+    color: white;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}

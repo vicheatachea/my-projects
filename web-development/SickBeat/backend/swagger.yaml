@@ -1,0 +1,329 @@
+openapi: 3.0.0
+info:
+  title: SickBeat API Documentation
+  version: 1.0.0
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
+paths:
+  /api/user/register:
+    post:
+      summary: Register a new user
+      tags: [Users]
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: John
+                email:
+                  type: string
+                  example: john@gmail.com
+                password:
+                  type: string
+                  example: john1234
+      responses:
+        201:
+          description: User registered successfully
+        400:
+          description: Invalid input
+  /api/user/login:
+    post:
+      summary: Login a user
+      tags: [Users]
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: john@gmail.com
+                password:
+                  type: string
+                  example: john1234
+      responses:
+        200:
+          description: Login successful
+        401:
+          description: Invalid password or email
+  /api/user/data:
+    get:
+      summary: Get user data
+      tags: [Users]
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: User data retrieved successfully
+        404:
+          description: User not found
+  /api/user/update:
+    patch:
+      summary: Update user data
+      tags: [Users]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: JohnDoe
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        200:
+          description: User updated successfully
+        400:
+          description: Invalid input
+        404:
+          description: User not found
+  /api/user/delete:
+    delete:
+      summary: Delete a user
+      tags: [Users]
+      security:
+        - bearerAuth: []
+      responses:
+        204:
+          description: User deleted successfully
+        404:
+          description: User not found
+  /api/spotify/login:
+    get:
+      summary: Login to Spotify
+      tags: [Spotify]
+      security: []
+      description: |
+        This route redirects to Spotify's login page and cannot be tested directly via Swagger.
+      responses:
+        302:
+          description: Redirect to Spotify login
+  /api/spotify/callback:
+    get:
+      summary: Spotify callback
+      tags: [Spotify]
+      security: []
+      description: |
+        This route is called by Spotify after login and cannot be tested directly via Swagger.
+      responses:
+        302:
+          description: Redirect after Spotify callback
+  /api/spotify/refresh-token:
+    get:
+      summary: Refresh Spotify token
+      tags: [Spotify]
+      security: []
+      description: |
+        This route requires the client ID and secret, which Swagger does not have, and cannot be tested directly.
+      responses:
+        200:
+          description: Token refreshed successfully
+        500:
+          description: Internal server error
+  /api/spotify/search:
+    get:
+      summary: Search Spotify
+      tags: [Spotify]
+      security: []
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: type
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Search results
+        500:
+          description: Internal server error
+  /api/spotify/genres:
+    get:
+      summary: Get recommended genres
+      tags: [Spotify]
+      security: []
+      responses:
+        200:
+          description: Recommended genres
+        500:
+          description: Internal server error
+  /api/spotify/new-releases:
+    get:
+      summary: Get new album releases
+      tags: [Spotify]
+      security: []
+      responses:
+        200:
+          description: New album releases
+        500:
+          description: Internal server error
+  /api/spotify/top-hits:
+    get:
+      summary: Get top hits
+      tags: [Spotify]
+      security: []
+      responses:
+        200:
+          description: Top hits
+        500:
+          description: Internal server error
+  /api/spotify/artist/{id}:
+    get:
+      summary: Get detailed artist data
+      tags: [Spotify]
+      security: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Artist data
+        500:
+          description: Internal server error
+  /api/spotify/track/{id}:
+    get:
+      summary: Get detailed track data
+      tags: [Spotify]
+      security: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Track data
+        500:
+          description: Internal server error
+  /api/spotify/collection/{type}/{id}:
+    get:
+      summary: Get detailed album or playlist data
+      tags: [Spotify]
+      security: []
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Collection data
+        400:
+          description: Invalid type
+        500:
+          description: Internal server error
+  /api/collections:
+    get:
+      summary: Get all collections
+      tags: [Collections]
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Collections retrieved successfully
+        500:
+          description: Internal server error
+    post:
+      summary: Create a new collection
+      tags: [Collections]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: My Collection
+                id:
+                  type: string
+                  example: 12345
+                type:
+                  type: string
+                  example: album
+                songAmount:
+                  type: number
+                  example: 10
+                image:
+                  type: string
+                  example: http://example.com/image.jpg
+      responses:
+        201:
+          description: Collection created successfully
+        400:
+          description: Invalid input
+  /api/collections/{id}:
+    get:
+      summary: Get a specific collection by ID
+      tags: [Collections]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Collection retrieved successfully
+        404:
+          description: Collection not found
+        500:
+          description: Internal server error
+    delete:
+      summary: Delete a specific collection by ID
+      tags: [Collections]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Collection deleted successfully
+        404:
+          description: Collection not found
+        500:
+          description: Internal server error
