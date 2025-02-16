@@ -8,6 +8,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/world-economy-simulator/pom.xml" />
+        <option value="$PROJECT_DIR$/world-economy-simulator/world-economy-simulator/pom.xml" />
+        <option value="$PROJECT_DIR$/programming-project/world-economy-simulator/pom.xml" />
       </list>
     </option>
   </component>

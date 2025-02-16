@@ -9,5 +9,8 @@
         <module name="WorldEconomySimulator" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="world-economy-simulator" target="23" />
+    </bytecodeTargetLevel>
   </component>
 </project>
